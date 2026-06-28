@@ -8,10 +8,13 @@ package 'httpd' do
   action :install
 end 
 
+remote_file '/var/www/html/nature.png' do
+  source 'https://images.pexels.com/photos/371633/pexels-photo-371633.jpeg?auto=compress&cs=tinysrgb&h=350'
+end
+
 cookbook_file '/var/www/html/home.html' do
   source 'home.html'
 end
-
 
 template '/var/www/html/index.html' do
   source 'index.html.erb'
